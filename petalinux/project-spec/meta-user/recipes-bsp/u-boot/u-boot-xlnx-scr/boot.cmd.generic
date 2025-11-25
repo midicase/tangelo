@@ -70,9 +70,29 @@ do
 		@@KERNEL_BOOTCMD@@ @@KERNEL_LOAD_ADDRESS@@ - @@DEVICETREE_ADDRESS@@
 	fi
 	if test "${boot_target}" = "xspi0" || test "${boot_target}" = "xspi1" || test "${boot_target}" = "qspi" || test "${boot_target}" = "qspi0"; then
-		echo [TE_BOOT-30] Try to use image.ub from ${boot_target}, load image.ub from qspi-flash address @@QSPI_FIT_IMAGE_OFFSET@@; 
-		echo [TE_BOOT-30] max. image.ub size is @@QSPI_FIT_IMAGE_SIZE@@ ;
+#		echo [TE_BOOT-30] Try to use image.ub from ${boot_target}, load image.ub from qspi-flash address @@QSPI_FIT_IMAGE_OFFSET@@; 
+#		echo [TE_BOOT-30] max. image.ub size is @@QSPI_FIT_IMAGE_SIZE@@ ;
 		
+		if test -e mmc 0:1 /uEnv.txt; then
+			fatload mmc 0:1 0x00200000 uEnv.txt;
+			echo "Importing environment(uEnv.txt) from mmc..."
+			env import -t 0x00200000 $filesize
+			if test -n $uenvcmd; then
+				echo "Running uenvcmd ...";
+				run uenvcmd;
+			fi
+		fi
+
+		if test -e  mmc 0:1 /system.bit; then
+			echo [TE_BOOT-30] Trying to use system.bit from mmc 0:1
+			fatload mmc 0 0x200000 system.bit && fpga loadb 0 0x200000 ${filesize}
+		fi
+		if test -e  mmc 0:1 /image.ub; then
+			echo [TE_BOOT-30] Trying to use image.ub from mmc 0:1
+			fatload mmc 0:1 bootm 0x10000000 image.ub;
+			bootm 0x10000000;
+		fi
+
 		sf probe 0 0 0;
 		sf read @@FIT_IMAGE_LOAD_ADDRESS@@ @@QSPI_FIT_IMAGE_OFFSET@@ @@QSPI_FIT_IMAGE_SIZE@@
 		bootm @@FIT_IMAGE_LOAD_ADDRESS@@;

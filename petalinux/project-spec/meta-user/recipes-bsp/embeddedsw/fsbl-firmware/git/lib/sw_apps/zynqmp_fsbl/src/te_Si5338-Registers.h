@@ -1,12 +1,11 @@
 //Register map for use with AN428 (JumpStart)
-//http://www.silabs.com/clocks 
-//Copyright 2012 Silicon Laboratories
+//https://www.skyworksinc.com/timing
 //#BEGIN_HEADER
-//Date = Friday, January 11, 2019 5:08 PM
+//Date = Tuesday, July 22, 2025 11:19 AM
 //File version = 3
-//Software Name = ClockBuilder Desktop
-//Software version = 6.5
-//Software date = June 4, 2015
+//Software Name = ClockBuilder Pro
+//Software version = 4.16.0.1
+//Software date = 7 11, 2025
 //Chip = Si533x
 //Part Number = Si533x
 //#END_HEADER
@@ -19,24 +18,18 @@
 //P2 = 1
 //FDBK Mux = NoClk
 //PFD Input Frequency (MHz) = 25.000000000
-//VCO Frequency (GHz) = 2.400000
-//N = 96  (96.0000)
+//VCO Frequency (GHz) = 2.496000
+//N = 99  21/25  (99.8400)
 //Internal feedback enabled
 //Output Clock 0
-// Output Frequency (MHz) = 200.000000000
+// Output Frequency (MHz) = 2.000000000
 // Mux Selection = IDn
-// MultiSynth = 12  (12.0000)
-// R = 1
+// MultiSynth = 312  (312.0000)
+// R = 4
 //Output Clock 1
-// Output Frequency (MHz) = 100.000000000
-// Mux Selection = IDn
-// MultiSynth = 24  (24.0000)
-// R = 1
+// Output is off
 //Output Clock 2
-// Output Frequency (MHz) = 27.000000000
-// Mux Selection = IDn
-// MultiSynth = 88  8/9  (88.8889)
-// R = 1
+// Output is off
 //Output Clock 3
 // Output is off
 //Driver 0
@@ -46,16 +39,16 @@
 // Output type = 1.8V LVDS
 // Output state when disabled = StopLow
 //Driver 1
-// Enabled
-// Powered on
-// Output voltage = 1.80
-// Output type = 1.8V LVDS
+// Disabled
+// Powered off
+// Output voltage = 3.30
+// Output type = 3.3V LVDS
 // Output state when disabled = StopLow
 //Driver 2
-// Enabled
-// Powered on
-// Output voltage = 1.80
-// Output type = 1.8V LVDS
+// Disabled
+// Powered off
+// Output voltage = 3.30
+// Output type = 3.3V LVDS
 // Output state when disabled = StopLow
 //Driver 3
 // Disabled
@@ -116,30 +109,30 @@ Reg_Data const code Reg_Store[NUM_REGS_MAX] = {
 { 28,0x0B,0xFF},
 { 29,0x08,0xFF},
 { 30,0xB0,0xFF},
-{ 31,0xC0,0xFF},
-{ 32,0xC0,0xFF},
-{ 33,0xC0,0xFF},
+{ 31,0xC8,0xFF},
+{ 32,0xE3,0xFF},
+{ 33,0xE3,0xFF},
 { 34,0xE3,0xFF},
-{ 35,0x2A,0xFF},
+{ 35,0x02,0xFF},
 { 36,0x06,0x1F},
-{ 37,0x06,0x1F},
-{ 38,0x06,0x1F},
+{ 37,0x00,0x1F},
+{ 38,0x00,0x1F},
 { 39,0x00,0x1F},
-{ 40,0x84,0xFF},
-{ 41,0x10,0x7F},
+{ 40,0x64,0xFF},
+{ 41,0x0C,0x7F},
 { 42,0x23,0x3F},
 { 43,0x00,0x00},
 { 44,0x00,0x00},
 { 45,0x00,0xFF},
 { 46,0x00,0xFF},
 { 47,0x14,0x3F},
-{ 48,0x2F,0xFF},
-{ 49,0x10,0xFF},
-{ 50,0xC5,0xFF},
+{ 48,0x3A,0xFF},
+{ 49,0x00,0xFF},
+{ 50,0xC4,0xFF},
 { 51,0x07,0xFF},
 { 52,0x10,0xFF},
 { 53,0x00,0xFF},
-{ 54,0x04,0xFF},
+{ 54,0x9A,0xFF},
 { 55,0x00,0xFF},
 { 56,0x00,0xFF},
 { 57,0x00,0xFF},
@@ -150,23 +143,23 @@ Reg_Data const code Reg_Store[NUM_REGS_MAX] = {
 { 62,0x00,0x3F},
 { 63,0x10,0xFF},
 { 64,0x00,0xFF},
-{ 65,0x0A,0xFF},
+{ 65,0x00,0xFF},
 { 66,0x00,0xFF},
 { 67,0x00,0xFF},
 { 68,0x00,0xFF},
 { 69,0x00,0xFF},
-{ 70,0x01,0xFF},
+{ 70,0x00,0xFF},
 { 71,0x00,0xFF},
 { 72,0x00,0xFF},
 { 73,0x00,0x3F},
 { 74,0x10,0xFF},
-{ 75,0x71,0xFF},
-{ 76,0x2A,0xFF},
-{ 77,0x1C,0xFF},
+{ 75,0x00,0xFF},
+{ 76,0x00,0xFF},
+{ 77,0x00,0xFF},
 { 78,0x00,0xFF},
 { 79,0x00,0xFF},
 { 80,0x00,0xFF},
-{ 81,0x09,0xFF},
+{ 81,0x00,0xFF},
 { 82,0x00,0xFF},
 { 83,0x00,0xFF},
 { 84,0x00,0x3F},
@@ -182,13 +175,13 @@ Reg_Data const code Reg_Store[NUM_REGS_MAX] = {
 { 94,0x00,0xFF},
 { 95,0x00,0x3F},
 { 96,0x10,0x00},
-{ 97,0x00,0xFF},
-{ 98,0x2E,0xFF},
-{ 99,0x00,0xFF},
+{ 97,0xEB,0xFF},
+{ 98,0x2F,0xFF},
+{ 99,0x34,0xFF},
 {100,0x00,0xFF},
 {101,0x00,0xFF},
 {102,0x00,0xFF},
-{103,0x01,0xFF},
+{103,0x19,0xFF},
 {104,0x00,0xFF},
 {105,0x00,0xFF},
 {106,0x80,0xBF},
@@ -315,6 +308,7 @@ Reg_Data const code Reg_Store[NUM_REGS_MAX] = {
 {227,0x00,0x00},
 {228,0x00,0x00},
 {229,0x00,0x00},
+{230,0x0E,0x0F},
 {231,0x00,0x00},
 {232,0x00,0x00},
 {233,0x00,0x00},
