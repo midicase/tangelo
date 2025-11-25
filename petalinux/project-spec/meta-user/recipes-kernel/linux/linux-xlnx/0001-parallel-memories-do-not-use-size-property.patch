@@ -1,0 +1,25 @@
+From 346334943619b47b9d6b13719a9d827295a78e41 Mon Sep 17 00:00:00 2001
+From: Markus Kirbeg <mkirberg@PC04174.trenz.local>
+Date: Tue, 28 Jan 2025 10:42:19 +0100
+Subject: [PATCH] parallel-memories: do not use size-property
+
+---
+ drivers/mtd/spi-nor/core.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/mtd/spi-nor/core.c b/drivers/mtd/spi-nor/core.c
+index 9212fe600..d2fbecdbf 100644
+--- a/drivers/mtd/spi-nor/core.c
++++ b/drivers/mtd/spi-nor/core.c
+@@ -3595,7 +3595,7 @@ static int spi_nor_late_init_params(struct spi_nor *nor)
+ 			params = devm_kzalloc(nor->dev, sizeof(*params), GFP_KERNEL);
+ 			if (params) {
+ 				memcpy(params, spi_nor_get_params(nor, 0), sizeof(*params));
+-				params->size = flash_size[idx];
++				//params->size = flash_size[idx];
+ 				spi_nor_set_params(nor, idx, params);
+ 			}
+ 		}
+-- 
+2.34.1
+
