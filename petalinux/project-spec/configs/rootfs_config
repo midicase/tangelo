@@ -64,7 +64,7 @@ CONFIG_system-zynqmp=y
 # CONFIG_busybox-dbg is not set
 # CONFIG_busybox-syslog is not set
 # CONFIG_busybox-hwclock is not set
-CONFIG_busybox-httpd=y
+# CONFIG_busybox-httpd=y
 # CONFIG_busybox-dev is not set
 # CONFIG_busybox-udhcpc is not set
 # CONFIG_busybox-udhcpd is not set
@@ -125,7 +125,7 @@ CONFIG_busybox-httpd=y
 #
 # CONFIG_e2fsprogs is not set
 # CONFIG_e2fsprogs-dev is not set
-CONFIG_e2fsprogs-mke2fs=y
+# CONFIG_e2fsprogs-mke2fs=y
 # CONFIG_e2fsprogs-dbg is not set
 # CONFIG_e2fsprogs-resize2fs is not set
 # CONFIG_e2fsprogs-tune2fs is not set
@@ -164,7 +164,7 @@ CONFIG_e2fsprogs-mke2fs=y
 #
 # fpga-manager-script 
 #
-CONFIG_fpga-manager-script=y
+# CONFIG_fpga-manager-script=y
 
 #
 # dfx-mgr
@@ -181,7 +181,7 @@ CONFIG_fpga-manager-script=y
 #
 # i2c-tools 
 #
-CONFIG_i2c-tools=y
+# CONFIG_i2c-tools=y
 # CONFIG_i2c-tools-dev is not set
 # CONFIG_i2c-tools-misc is not set
 # CONFIG_i2c-tools-dbg is not set
@@ -242,7 +242,7 @@ CONFIG_i2c-tools=y
 #
 # mtd-utils 
 #
-CONFIG_mtd-utils=y
+# CONFIG_mtd-utils=y
 # CONFIG_mtd-utils-jffs2 is not set
 # CONFIG_mtd-utils-misc is not set
 # CONFIG_mtd-utils-dev is not set
@@ -363,14 +363,14 @@ CONFIG_mtd-utils=y
 #
 # usbutils 
 #
-CONFIG_usbutils=y
+# CONFIG_usbutils=y
 # CONFIG_usbutils-dev is not set
 # CONFIG_usbutils-dbg is not set
 
 #
 # util-linux 
 #
-CONFIG_util-linux=y
+# CONFIG_util-linux=y
 # CONFIG_util-linux-sulogin is not set
 # CONFIG_util-linux-losetup is not set
 # CONFIG_util-linux-hwclock is not set
@@ -498,7 +498,7 @@ CONFIG_util-linux=y
 #
 # can-utils 
 #
-CONFIG_can-utils=y
+# CONFIG_can-utils=y
 # CONFIG_can-utils-dbg is not set
 # CONFIG_can-utils-dev is not set
 
@@ -541,7 +541,7 @@ CONFIG_can-utils=y
 #
 # nfs-utils 
 #
-CONFIG_nfs-utils=y
+# CONFIG_nfs-utils=y
 # CONFIG_nfs-utils-stats is not set
 # CONFIG_nfs-utils-dbg is not set
 # CONFIG_nfs-utils-dev is not set
@@ -790,7 +790,7 @@ CONFIG_nfs-utils=y
 #
 # pciutils 
 #
-CONFIG_pciutils=y
+# CONFIG_pciutils=y
 # CONFIG_pciutils-dbg is not set
 # CONFIG_libpci is not set
 # CONFIG_pciutils-ids is not set
@@ -1085,7 +1085,7 @@ CONFIG_pciutils=y
 #
 # run-postinsts 
 #
-CONFIG_run-postinsts=y
+# CONFIG_run-postinsts=y
 # CONFIG_run-postinsts-dbg is not set
 # CONFIG_run-postinsts-dev is not set
 
@@ -1370,7 +1370,7 @@ CONFIG_run-postinsts=y
 #
 # libdfx 
 #
-CONFIG_libdfx=y
+# CONFIG_libdfx=y
 # CONFIG_libdfx-dbg is not set
 # CONFIG_libdfx-dev is not set
 
@@ -2268,8 +2268,8 @@ CONFIG_libdfx=y
 # libudev 
 #
 # CONFIG_libudev is not set
-CONFIG_udev-extraconf=y
-CONFIG_linux-xlnx-udev-rules=y
+# CONFIG_udev-extraconf=y
+# CONFIG_linux-xlnx-udev-rules=y
 
 #
 # fbset 
@@ -2601,7 +2601,7 @@ CONFIG_linux-xlnx-udev-rules=y
 #
 # packagegroup-core-boot 
 #
-CONFIG_packagegroup-core-boot=y
+# CONFIG_packagegroup-core-boot=y
 # CONFIG_packagegroup-core-boot-dev is not set
 # CONFIG_packagegroup-core-boot-dbg is not set
 
@@ -3087,7 +3087,7 @@ CONFIG_packagegroup-core-boot=y
 #
 # tcf-agent 
 #
-CONFIG_tcf-agent=y
+# CONFIG_tcf-agent=y
 # CONFIG_tcf-agent-dev is not set
 # CONFIG_tcf-agent-dbg is not set
 
@@ -3424,7 +3424,7 @@ CONFIG_tcf-agent=y
 #
 # bridge-utils 
 #
-CONFIG_bridge-utils=y
+# CONFIG_bridge-utils=y
 # CONFIG_bridge-utils-dbg is not set
 # CONFIG_bridge-utils-dev is not set
 
@@ -3522,7 +3522,7 @@ CONFIG_bridge-utils=y
 #
 # dosfstools 
 #
-CONFIG_dosfstools=y
+# CONFIG_dosfstools=y
 # CONFIG_dosfstools-dev is not set
 # CONFIG_dosfstools-dbg is not set
 
@@ -3543,7 +3543,7 @@ CONFIG_dosfstools=y
 #
 # u-boot-tools
 #
-CONFIG_u-boot-tools=y
+# CONFIG_u-boot-tools=y
 # CONFIG_u-boot-tools-dbg is not set
 # CONFIG_u-boot-tools-dev is not set
 
@@ -3987,13 +3987,13 @@ CONFIG_u-boot-tools=y
 # Image Features
 #
 # CONFIG_imagefeature-ssh-server-dropbear is not set
-CONFIG_imagefeature-ssh-server-openssh=y
-CONFIG_imagefeature-hwcodecs=y
+# CONFIG_imagefeature-ssh-server-openssh=y
+# CONFIG_imagefeature-hwcodecs=y
 # CONFIG_imagefeature-package-management is not set
 # CONFIG_imagefeature-debug-tweaks is not set
-CONFIG_imagefeature-empty-root-password=y
-CONFIG_imagefeature-serial-autologin-root=y
-CONFIG_Init-manager-systemd=y
+# CONFIG_imagefeature-empty-root-password=y
+# CONFIG_imagefeature-serial-autologin-root=y
+# CONFIG_Init-manager-systemd=y
 # CONFIG_Init-manager-sysvinit is not set
 
 #
@@ -4001,13 +4001,13 @@ CONFIG_Init-manager-systemd=y
 #
 # CONFIG_gpio-demo is not set
 # CONFIG_peekpoke is not set
-CONFIG_startup=y
-CONFIG_webfwu=y
+# CONFIG_startup=y
+# CONFIG_webfwu=y
 
 #
 # PetaLinux RootFS Settings
 #
-CONFIG_ADD_EXTRA_USERS="root:root;petalinux::passwd-expire;"
-CONFIG_CREATE_NEW_GROUPS="aie;"
-CONFIG_ADD_USERS_TO_GROUPS="petalinux:audio,video,aie,input;"
-CONFIG_ADD_USERS_TO_SUDOERS="petalinux"
+# CONFIG_ADD_EXTRA_USERS="root:root;petalinux::passwd-expire;"
+# CONFIG_CREATE_NEW_GROUPS="aie;"
+# CONFIG_ADD_USERS_TO_GROUPS="petalinux:audio,video,aie,input;"
+# CONFIG_ADD_USERS_TO_SUDOERS="petalinux"
