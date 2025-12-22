@@ -85,11 +85,11 @@ do
 
 		if test -e  mmc 0:1 /system.bit; then
 			echo [TE_BOOT-30] Trying to use system.bit from mmc 0:1
-			fatload mmc 0 0x200000 system.bit && fpga loadb 0 0x200000 ${filesize}
+			fatload mmc 0:1 0x200000 system.bit && fpga loadb 0 0x200000 ${filesize}
 		fi
 		if test -e  mmc 0:1 /image.ub; then
 			echo [TE_BOOT-30] Trying to use image.ub from mmc 0:1
-			fatload mmc 0:1 bootm 0x10000000 image.ub;
+			fatload mmc 0:1 0x10000000 image.ub;
 			bootm 0x10000000;
 		fi
 
