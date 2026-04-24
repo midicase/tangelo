@@ -98,3 +98,10 @@
     status = "okay";
 };
 
+/ {
+  dma_proxy_rx: dma_proxy_rx {
+      compatible = "xlnx,dma_proxy";
+      dmas = <&axi_dma_0 0>;        /* channel 0 = S2MM */
+      dma-names = "dma_proxy_rx";
+  };
+};
