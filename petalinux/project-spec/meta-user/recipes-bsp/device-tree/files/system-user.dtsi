@@ -26,17 +26,13 @@
 };
 
 
-/*-------------------- USB 2.0 only ----------------*/
+/*-------------------- USB 2.0 disabled (no USB in XSA) ----------------*/
 &usb0 {
-    status = "okay";
-    clock-names = "bus_clk";
-    clocks = <&zynqmp_clk USB0_BUS_REF>;
-    assigned-clocks = <&zynqmp_clk USB0_BUS_REF>;
+    status = "disabled";
 };
 
-
 &dwc3_0 {
-    dr_mode = "host";
+    status = "disabled";
 };
 
 
