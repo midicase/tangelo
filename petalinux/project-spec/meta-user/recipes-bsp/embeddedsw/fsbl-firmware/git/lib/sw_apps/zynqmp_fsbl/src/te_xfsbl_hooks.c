@@ -74,6 +74,7 @@ u32 TE_XFsbl_HookBeforeHandoff(u32 EarlyHandoff)
 	/**
 	 * Add the code here
 	 */
+
 #if defined(ENABLE_TE_HOOKS_BH)
 	Status = TE_XFsbl_HookBeforeHandoff_Custom(EarlyHandoff);
 #endif  

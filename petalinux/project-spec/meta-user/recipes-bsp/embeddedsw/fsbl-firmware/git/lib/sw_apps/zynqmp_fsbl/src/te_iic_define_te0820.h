@@ -21,19 +21,26 @@
 /* Define clock chip */
 // #define CLOCK_SI5345
 // #define NVM_CODE /* for SI5345: NVM writing is limited!,  you do it on your own risk!*/
-
 #define CLOCK_SI5338
 
 
 /* IIC interface type definition (use one that pass) */
 // #define IIC_TYPE_AXI_IIC
-// #define IIC_BASE_ADDRESS	XPAR_IIC_0_BASEADDR
+// #define IIC_BASE_ADDRESS	    XPAR_IIC_0_BASEADDR
 
 //#define IIC_TYPE_ZYNQPS_IIC
-//#define XIICPS_DEVICE_ID	XPAR_XIICPS_0_DEVICE_ID
+//#define XIICPS_DEVICE_ID	    XPAR_XIICPS_0_DEVICE_ID
+
+//#define IIC_TYPE_ZYNQUPS_IIC
+//#define XIICPS_DEVICE_ID	    XPAR_XIICPS_0_DEVICE_ID
 
 #define IIC_TYPE_ZYNQUPS_IIC
-#define XIICPS_DEVICE_ID	XPAR_XIICPS_0_DEVICE_ID
+// Vitis Build
+//#define XIICPS_DEVICE_ID	    XPAR_I2C0_BASEADDR
+// Petalinux Build
+#define XIICPS_DEVICE_ID	    XPAR_IIC_0_BASEADDR
+
+
 // second I2C for CPLD, actually not used
 //#define XIICPS_DEVICE_ID_2	XPAR_XIICPS_1_DEVICE_ID
 #define XIICPS_DEVICE_ID_2	1
@@ -71,8 +78,12 @@
 //#define UART_TYPE_ZYNQPS_UART
 //#define UART_DEVICE_ID			XPAR_XUARTPS_0_DEVICE_ID
 
+//#define UART_TYPE_ZYNQUPS_UART
+//#define UART_DEVICE_ID			XPAR_XUARTPS_0_DEVICE_ID
+
 #define UART_TYPE_ZYNQUPS_UART
-#define UART_DEVICE_ID			XPAR_XUARTPS_0_DEVICE_ID
+#define UART_DEVICE_ID	            XPAR_XUARTPS_0_BASEADDR
+
 
 //#define UART_TYPE_NO_UART
 
