@@ -18,7 +18,7 @@ cd FPGAs_AdaptiveSoCs_Unified_2024.2_1113_1001
 ./xsetup
 ```
 
-Select the PetaLinux install and install to `/opt/xilinx`.
+Hit Continue if prompted for newer version to keep existing, select the PetaLinux install, aarch64, and install to `/opt/xilinx`.  Make sure the folder exists and you own it.
 
 ## First-time Setup
 
