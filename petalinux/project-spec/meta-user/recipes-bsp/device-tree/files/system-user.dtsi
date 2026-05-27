@@ -128,7 +128,7 @@
     #address-cells=<1>;
     #size-cells=<0>;
     status = "okay";
-    num-cs = <1>;
+    num-cs = <2>;
     //bus-num = <1>;        // may not be needed
     is-decoded-cs = <0>;
 
