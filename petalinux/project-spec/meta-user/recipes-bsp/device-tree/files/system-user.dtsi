@@ -90,8 +90,77 @@
         };
 };
 
-&spi1 {
+/*
+ * The OLED SPI interface is connected to PS MIO SPI0.
+ *     - CS0 is OLED
+ */
+&spi0 {
+    #address-cells=<1>;
+    #size-cells=<0>;
     status = "okay";
+    num-cs = <1>;
+    //bus-num = <0>;        // may not be needed
+    is-decoded-cs = <0>;
+
+    spidev@0x00 {
+        compatible = "spidev";              // normal use
+        //compatible = "rohm,dh2228fv";     // NOTE: use this if running PetaLinux 2022.1 (see note in title block)
+        //compatible = "oled_mftr,oled_pn"; // NOTE: use this if specific oled driver is available
+
+        /* Max SPI clock frequency via Zynq EMIO is 25MHz */
+        spi-max-frequency = <25000000>;
+
+        /* slave number - CS */
+        reg = <0>;
+
+        /* Set SPI mode = 0, adjust if necessary */
+        spi-cpol = <0>;
+        spi-cpha = <0>;
+    };
+};
+
+/*
+ * The clock device AD9913 is connected to PS SPI1 through EMIO through the PL.
+ *     - CS0 is AD9913
+ *     - CS1 is ???
+ */
+&spi1 {
+    #address-cells=<1>;
+    #size-cells=<0>;
+    status = "okay";
+    num-cs = <1>;
+    //bus-num = <1>;        // may not be needed
+    is-decoded-cs = <0>;
+
+    spidev@0x00 {
+        compatible = "spidev";          // normal use
+        //compatible = "rohm,dh2228fv"; // NOTE: use this if running PetaLinux 2022.1 (see note in title block)
+
+        /* Max SPI clock frequency via Zynq EMIO is 25MHz */
+        spi-max-frequency = <25000000>;
+
+        /* slave number - CS */
+        reg = <0>;
+
+        /* Set SPI mode = 0, adjust if necessary */
+        spi-cpol = <0>;
+        spi-cpha = <0>;
+    };
+
+    spidev@0x01 {
+        compatible = "spidev";          // normal use
+        //compatible = "rohm,dh2228fv"; // NOTE: use this if running PetaLinux 2022.1 (see note in title block)
+
+        /* Max SPI clock frequency via Zynq EMIO is 25MHz */
+        spi-max-frequency = <25000000>;
+
+        /* slave number - CS */
+        reg = <1>;
+
+        /* Set SPI mode = 0, adjust if necessary */
+        spi-cpol = <0>;
+        spi-cpha = <0>;
+    };
 };
 
 / {
