@@ -103,8 +103,8 @@
     is-decoded-cs = <0>;
 
     spidev@0x00 {
-        compatible = "spidev";              // normal use
-        //compatible = "rohm,dh2228fv";     // NOTE: use this if running PetaLinux 2022.1 (see note in title block)
+        //compatible = "spidev";            // not in kernel allowlist, will not bind
+        compatible = "rohm,dh2228fv";
         //compatible = "oled_mftr,oled_pn"; // NOTE: use this if specific oled driver is available
 
         /* Max SPI clock frequency via Zynq EMIO is 25MHz */
@@ -133,8 +133,8 @@
     is-decoded-cs = <0>;
 
     spidev@0x00 {
-        compatible = "spidev";          // normal use
-        //compatible = "rohm,dh2228fv"; // NOTE: use this if running PetaLinux 2022.1 (see note in title block)
+        //compatible = "spidev";        // not in kernel allowlist, will not bind
+        compatible = "rohm,dh2228fv";
 
         /* Max SPI clock frequency via Zynq EMIO is 25MHz */
         spi-max-frequency = <25000000>;
@@ -148,8 +148,8 @@
     };
 
     spidev@0x01 {
-        compatible = "spidev";          // normal use
-        //compatible = "rohm,dh2228fv"; // NOTE: use this if running PetaLinux 2022.1 (see note in title block)
+        //compatible = "spidev";        // not in kernel allowlist, will not bind
+        compatible = "rohm,dh2228fv";
 
         /* Max SPI clock frequency via Zynq EMIO is 25MHz */
         spi-max-frequency = <25000000>;
