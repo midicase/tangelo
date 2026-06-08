@@ -9,6 +9,17 @@
     //clocks = <&zynqmp_clk 71>;
     clock-names = "pl_clk0";
   };
+  /* PL1_REF (150 MHz) is the AD9913 DDS reference clock. Claim it so the
+   * common-clock framework keeps it enabled; otherwise Linux gates it as an
+   * unused clock at boot and the DDS sees no SYSCLK (PLL is bypassed), so it
+   * outputs DC. u-boot leaves it running, which is why DDS bring-up works
+   * from u-boot but not from Linux. */
+  fclk1: fclk1 {
+    status = "okay";
+    compatible = "xlnx,fclk";
+    clocks = <&zynqmp_clk PL1_REF>;
+    clock-names = "pl_clk1";
+  };
 };
 
 /*-------------------- SD0 eMMC ----------------*/
