@@ -180,4 +180,26 @@
       dmas = <&axi_dma_0 0>;        /* channel 0 = S2MM */
       dma-names = "dma_proxy_rx";
   };
+
+  /*------------------ IRIG 1pps interrupt (PL -> PS) --------------------*/
+  /* The PL IRIG block (in axi_reg32 at 0x80000000) raises an interrupt on each
+   * one-second boundary. tangelo waits on it via UIO, reads IRIG_IN, and
+   * disciplines the system clock. The node name embeds "irig" so tangelo's
+   * resolveIrigUio() can match /sys/class/uio/uioN/name.
+   *
+   * The reg maps the same 0x80000000/0x10000 PL register window tangelo also
+   * reaches through /dev/mem (both MAP_SHARED — no conflict); UIO here is used
+   * for the interrupt delivery, not register access.
+   *
+   * Interrupt routing confirmed from the XSA (zusys_wrapper_20260619.hwh):
+   * tm_intf_top_0/irig_irq -> ilconcat_0 In3 -> zynq_ultra_ps_e_0/pl_ps_irq0[3],
+   * SENSITIVITY = LEVEL_HIGH. ZynqMP pl_ps_irq0[0..7] map to GIC SPI 89..96, so
+   * bit 3 = SPI 92. Flags 4 = IRQ_TYPE_LEVEL_HIGH (matches the PL). */
+  irig_uio: irig@80000000 {
+      compatible = "generic-uio";
+      reg = <0x0 0x80000000 0x0 0x10000>;
+      interrupt-parent = <&gic>;
+      interrupts = <0 92 4>;
+      status = "okay";
+  };
 };
