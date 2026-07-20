@@ -208,6 +208,16 @@
  * Disable APU cores 2 and 3 to reduce static power/heat. Linux never issues a
  * PSCI CPU_ON for these, so the PMU firmware leaves them power-gated. Cores 0
  * (boot) and 1 remain online.
+ *
+ * The perf PMU node (/pmu in zynqmp.dtsi) lists all four cores in its
+ * interrupt-affinity, so deleting cpu2/cpu3 would leave dangling phandles and
+ * fail the dtc build. Override /pmu to reference only the surviving cores, and
+ * trim its per-core SPI interrupt list (143..146 -> 143,144) to match.
  */
+&{/pmu} {
+    interrupts = <0 143 4>, <0 144 4>;
+    interrupt-affinity = <&cpu0>, <&cpu1>;
+};
+
 /delete-node/ &cpu2;
 /delete-node/ &cpu3;
