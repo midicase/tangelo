@@ -203,3 +203,11 @@
       status = "okay";
   };
 };
+
+/*
+ * Disable APU cores 2 and 3 to reduce static power/heat. Linux never issues a
+ * PSCI CPU_ON for these, so the PMU firmware leaves them power-gated. Cores 0
+ * (boot) and 1 remain online.
+ */
+/delete-node/ &cpu2;
+/delete-node/ &cpu3;
