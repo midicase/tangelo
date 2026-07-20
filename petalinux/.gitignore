@@ -26,3 +26,4 @@ project-spec/configs/init-ifupdown/
 project-spec/configs/systemd-conf/
 project-spec/configs/configs/
 project-spec/configs/rootfsconfigs/
+/apps/
