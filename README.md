@@ -35,7 +35,7 @@ The `petalinux/` directory in this repo is the PetaLinux project. No scaffolding
 ```bash
 source /opt/xilinx/PetaLinux/2024.2/tool/settings.sh
 cd petalinux
-petalinux-config --get-hw-description=/path/to/supplied.xsa --silentconfig
+petalinux-config --silentconfig --get-hw-description=/path/to/supplied.xsa
 petalinux-build
 ```
 
