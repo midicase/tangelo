@@ -204,6 +204,16 @@
   };
 };
 
+/*------------------ SYSMON --------------------*/
+/* Disabled: the in-kernel xadc driver (xilinx-xadc-core.c) binds this node
+ * and continuously samples its ADC/alarm registers at 0x80010000, which made
+ * that range look like it was changing out from under tangelo when it
+ * wasn't — tangelo's own PL window stops at 0x80000000/0x10000 and never
+ * reaches this address. */
+&system_management_wiz_0 {
+    status = "disabled";
+};
+
 /*
  * Disable APU cores 2 and 3 to reduce static power/heat. Linux never issues a
  * PSCI CPU_ON for these, so the PMU firmware leaves them power-gated. Cores 0
