@@ -60,6 +60,7 @@
     phy0: phy0@1 {
         device_type = "ethernet-phy";
         reg = <1>;
+        marvell,reg-init = <3 16 0 0x1040>;
     };
 };
 
