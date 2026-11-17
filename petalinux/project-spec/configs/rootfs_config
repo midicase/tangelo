@@ -3999,7 +3999,6 @@ CONFIG_Init-manager-systemd=y
 #
 # user packages 
 #
-# CONFIG_axi-dma is not set
 # CONFIG_fcgi is not set
 # CONFIG_gpio-demo is not set
 # CONFIG_lighttpd is not set

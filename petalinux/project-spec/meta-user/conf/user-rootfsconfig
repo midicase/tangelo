@@ -7,5 +7,4 @@
 #CONFIG_lighttpd
 #CONFIG_fcgi
 
-CONFIG_axi-dma
 
